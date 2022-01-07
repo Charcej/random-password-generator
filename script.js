@@ -80,6 +80,24 @@ if (special === true) {
   minimumCount++;
 }
 
+// Empty string variable for the for loop
+var randomPasswordGenerated = "";
+
+// For loop for getting all the random characters
+for (let i = 0; i < parseInt(passwordLength) - minimumCount); i++ {
+  var randomNumberPicked = Math.floor(Math.random () * 4);
+
+  randomPasswordGenerated += functionArray[randomNumberPicked] ();
+}
+
+// ensure characters added to pw
+randomPasswordGenerated += minimumNumbers;
+randomPasswordGenerated += minumumLowerCases;
+randomPasswordGenerated += minimumUpperCases;
+randomPasswordGenerated += minimumSpecialCharacters;
+
+return randomPasswordGenerated;
+
 
 
 
