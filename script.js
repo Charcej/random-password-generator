@@ -30,8 +30,8 @@ function generatePassword () {
 
   var upperCases = confirm("Do you want to include at least one uppercase character?");
 
-  var specialCharacters = confirm("Do you want to include at least one special character?");
-}
+  var special = confirm("Do you want to include at least one special character?");
+};
 
 // Minimum count for user input
 var minumumCount = 0;
@@ -41,3 +41,22 @@ var minimumNumbers = "";
 var minimumLowerCases = "";
 var minimumUpperCases = "";
 var minimumSpecialCharacters = "";
+
+//Generator functions
+var functionArray = [
+  function getNumbers() {
+    return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+  },
+
+  function getLowerCases() {
+    return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+  },
+  function getUpperCases() {
+    return +String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+  },
+  function getSpecialCharacters() {
+    return specialCharacters(Math.floor(Math.random() * specialCharacters.length));
+  }
+
+];
+
