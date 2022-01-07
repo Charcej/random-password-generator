@@ -60,3 +60,26 @@ var functionArray = [
 
 ];
 
+// Makes sure user selected OK and fulfilled empty minimums
+
+if (numbers === true) {
+  minimumNumbers = functionArray[0];
+  minimumCount++;
+}
+
+if (lowerCases === true) {
+  minumumLowerCases = functionArray[1];
+}
+
+if (upperCases === true) {
+  minimumUpperCases = functionArray[2];
+}
+
+if (special === true) {
+  minimumSpecialCases = functionArray[3];
+  minimumCount++;
+}
+
+
+
+
