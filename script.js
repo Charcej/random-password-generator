@@ -84,7 +84,7 @@ if (special === true) {
 var randomPasswordGenerated = "";
 
 // For loop for getting all the random characters
-for (let i = 0; i < parseInt(passwordLength) - minimumCount); i++ {
+for (let i = 0; i < parseInt(passwordLength) - minimumCount; i++) {
   var randomNumberPicked = Math.floor(Math.random () * 4);
 
   randomPasswordGenerated += functionArray[randomNumberPicked] ();
