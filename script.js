@@ -25,39 +25,40 @@ function writePassword() {
 
   }
 
-function generatePassword() {
-  // generatePassword based on prompts
-  var password = "";
-  for(var i = 0; i < characterLength; i++) {
-    var randomIndex = Math.floor(Math.random() * choiceArr.length);
-    password = password + choiceArr[randomIndex];
+  function generatePassword() {
+    // generatePassword based on prompts
+    var password = "";
+    for(var i = 0; i < characterLength; i++) {
+      var randomIndex = Math.floor(Math.random() * choiceArr.length);
+      password = password + choiceArr[randomIndex];
+    }
+    return password;
   }
-  return password;
+
+  // Get character length and turn it into a number instad of a string
+  function getPrompts(){
+    choiceArr = [];
+    characterLength = parseInt(prompt("How many characters long do you want your password to be? Pick a number between 8 and 128."));
+
+  // Makes sure it's a number and that it's over 8 and under 128
+    if(isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
+      alert("Character length has to be a number between 8 and 128. Please try again.");
+      return false;
+    }
+
+  // Don't have to worry about checking next four because they're true or false
+    if (confirm("Would you like lowercase letters?")) {
+        choiceArr = choiceArr.concat(lowerCaseArr);
+    }
+    if (confirm("Would you like uppercase letters?")) {
+        choiceArr = choiceArr.concat(upperCaseArr);
+    }
+    if (confirm("Would you like special characters?")) {
+        choiceArr = choiceArr.concat(specialCharArr);
+    }
+    if (confirm("Would you like numbers?")) {
+        choiceArr = choiceArr.concat(numberArr);
+    }
+    return true;
+  }
 }
-
-// Get character length and turn it into a number instad of a string
-function getPrompts(){
-  choiceArr = [];
-  characterLength = parseInt(prompt("How many characters long do you want your password to be? Pick a number between 8 and 128."));
-
-// Makes sure it's a number and that it's over 8 and under 128
-  if(isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
-    alert("Character length has to be a number between 8 and 128. Please try again.");
-    return false;
-  }
-
-// Don't have to worry about checking next four because they're true or false
-  if (confirm("Would you like lowercase letters?")) {
-      choiceArr = choiceArr.concat(lowerCaseArr);
-  }
-  if (confirm("Would you like uppercase letters?")) {
-      choiceArr = choiceArr.concat(upperCaseArr);
-  }
-  if (confirm("Would you like special characters?")) {
-      choiceArr = choiceArr.concat(specialCharArr);
-  }
-  if (confirm("Would you like numbers?")) {
-      choiceArr = choiceArr.concat(numberArr);
-  }
-  return true;
-}}
